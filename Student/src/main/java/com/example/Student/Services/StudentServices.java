@@ -15,10 +15,10 @@ public class StudentServices {
 	
 	public List<Student> getAllStudents() {
 		// TODO Auto-generated method stub
-		
+		if(students.size() == 0) {
 		students.add(new Student(101,"Shivendra","9936562646","Ayodhya"));
 		students.add(new Student(102,"Rajesh","9947592904","Faizabad"));
-		students.add(new Student(103,"Shivam","945376293","rampur"));
+		students.add(new Student(103,"Shivam","945376293","rampur"));}
 		return students;
 	}
 
@@ -26,6 +26,12 @@ public class StudentServices {
 		// TODO Auto-generated method stub
 		
 		return students.stream().filter( o->o.getId() == (Id) ).findFirst().orElse(null);
+	}
+
+	public void createStudent(Student student) {
+		// TODO Auto-generated method stub
+		students.add(student);
+		
 	}
 
 }
